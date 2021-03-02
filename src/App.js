@@ -23,7 +23,7 @@ const App = () => {
                 {(!operand1) ?
                     <Screen1 handleChange={handleChange}/>
                     :
-                    <Screen2 operand1={operand1}/>
+                    <Screen2 input={operand1}/>
                 }
             </div>
         </>
