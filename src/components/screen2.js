@@ -13,17 +13,25 @@ const Screen = ({input}) => {
     const handleChange = (e) => {
         let {result} = state;
         let previousResult = result;
-        setState({...state, [e.target.name]: e.target.value, operand1: previousResult})
+        if (previousResult) {
+            setState({...state, [e.target.name]: e.target.value, operand1: previousResult})
+        }else{
+            setState({...state, [e.target.name]: e.target.value})
+        }
     }
     const handleSubmit = (e) => {
         e.preventDefault();
         let {result} = state;
         let previousResult = result;
         if (result) {
-            result = eval(`${result} ${operator} ${operand2}`);
+            result = eval(`${result}
+            ${operator}
+            ${operand2}`);
             setState({...state, result: result, operand1: previousResult})
         } else {
-            result = eval(`${operand1} ${operator} ${operand2}`)
+            result = eval(`${operand1}
+            ${operator}
+            ${operand2}`)
             setState({...state, result: result})
         }
     }
@@ -53,34 +61,36 @@ const Screen = ({input}) => {
                             <div className="row justify-content-center mt-5">
 
                                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 text-center px-3">
-                                <div className="form-text">
-                                    <select class="select" name="operator" onChange={handleChange}
-                                            value={state.operator}>
-                                        <option value="+">+</option>
-                                        <option value="-">-</option>
-                                        <option value="/">/</option>
-                                        <option value="*">*</option>
+                                    <div className="form-text">
+                                        <select class="select" name="operator" onChange={handleChange}
+                                                value={state.operator}>
+                                            <option value="+">+</option>
+                                            <option value="-">-</option>
+                                            <option value="/">/</option>
+                                            <option value="*">*</option>
 
-                                    </select>
-                                    <label for="youridhere" className="static-value">Operator</label>
-                                    <label for="youridhere" className="static-value1"><i class="fas fa-angle-down"></i></label>
-                                     </div>
+                                        </select>
+                                        <label for="youridhere" className="static-value">Operator</label>
+                                        <label for="youridhere" className="static-value1"><i
+                                            class="fas fa-angle-down"></i></label>
+                                    </div>
                                 </div>
 
                                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 px-3 px-sm-0 text-center">
 
-                                  <div className="form-text">
-                                    <input type="number" id="operand2" name="operand2" value={state.operand2}
-                                           placeholder="" onChange={handleChange}/>
-                                           <label for="youridhere" className="static-value">Operand</label>
-                                           </div>
+                                    <div className="form-text">
+                                        <input type="number" id="operand2" name="operand2" value={state.operand2}
+                                               placeholder="" onChange={handleChange}/>
+                                        <label for="youridhere" className="static-value">Operand</label>
+                                    </div>
                                 </div>
 
 
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-4 text-center px-3">
 
 
-                                    <input type="submit" className="btn btn-success btn-block" onClick={handleSubmit} value="Add Operation"/>
+                                    <input type="submit" className="btn btn-success btn-block" onClick={handleSubmit}
+                                           value="Add Operation"/>
 
                                 </div>
 
