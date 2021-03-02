@@ -78,7 +78,7 @@ const Screen = ({operand1}) => {
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-4 text-center px-3">
 
 
-                                    <input type="submit" className="btn btn-success btn-block" onClick={handleSubmit}/>
+                                    <input type="submit" className="btn btn-success btn-block" onClick={handleSubmit} value="Add Number"/>
 
                                 </div>
 

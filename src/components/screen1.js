@@ -34,7 +34,7 @@ const Screen1 = ({handleChange}) => {
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-6">
                                     <div>
                                         <input type="submit" className="btn btn-success btn-block"
-                                               onClick={handleSubmit}/>
+                                               onClick={handleSubmit} value="Add Number"/>
                                     </div>
 
                                 </div>
