@@ -2,30 +2,29 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from 'react';
 
-const Screen = ({operand1}) => {
+const Screen = ({input}) => {
     const [state, setState] = useState({
-        operand1: operand1,
+        operand1: input,
         operator: '+',
         operand2: 0,
         result: 0
     })
-
+    const {operand2, operator, result, operand1} = state;
     const handleChange = (e) => {
         setState({...state, [e.target.name]: e.target.value})
     }
     const handleSubmit = (e) => {
         e.preventDefault();
         let {result} = state;
+        let previousResult = result;
         if (result) {
             result = eval(`${result} ${operator} ${operand2}`);
-            setState({...state, result: result})
+            setState({...state, result: result, operand1: previousResult})
         } else {
             result = eval(`${operand1} ${operator} ${operand2}`)
             setState({...state, result: result})
         }
     }
-
-    const {operand2, operator, result} = state;
     return (
         <>
             <div className="container">
