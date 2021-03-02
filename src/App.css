@@ -14,18 +14,18 @@
 }
  .select {
   width: 100%;
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-
+  -webkit-appearance: none;
   margin-bottom: 16px;
   resize: vertical;
 }
 input[type=submit] {
  
   color: white;
-  padding: 15px 0px 15px;
+  padding: 26px 0px 27px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -57,4 +57,38 @@ input[type=submit] {
 
 .badge {
   width: 50px;
+}
+.total{
+  color:rgb(80,227,194)
+}
+.badge-color{
+  background-color: rgb(236,245,247);
+}
+.form-text{
+	position:relative;
+}
+
+.static-value{
+	position:absolute;
+	left:20px;
+	
+	font-size:17px;
+	color:rgb(168,165,178);
+	top:14px;
+}
+.static-value{
+	position:absolute;
+	left:20px;
+	
+	font-size:17px;
+	color:rgb(168,165,178);
+	top:14px;
+}
+.static-value1{
+	position:absolute;
+	right:20px;
+	
+	font-size:20px;
+	color:black;
+	top:24px;
 }

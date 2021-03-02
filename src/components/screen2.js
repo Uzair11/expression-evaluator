@@ -39,20 +39,20 @@ const Screen = ({operand1}) => {
                                 <div className="col-12 text-center mb-4">
 
                                     <div>
-                                        <span class="badge badge-secondary py-4">{operand1}</span>
-                                        <span class="badge badge-secondary py-4 ml-2 mr-2">{operand2}</span>
-                                        <span class="badge badge-secondary py-4">{operator}</span>
+                                        <span class="badge badge-color py-4 mr-1">{operand1}</span>
+                                        <span class="badge badge-color py-4 ml-2 mr-2">{operand2}</span>
+                                        <span class="badge badge-color py-4 ml-1">{operator}</span>
                                     </div>
 
                                     <div><h1 className="mt-3 mb-3">=</h1></div>
-                                    <div><h1 className="mt-3 mb-3">{result}</h1></div>
+                                    <div><h1 className="mt-3 mb-3 total">{result}</h1></div>
                                 </div>
 
                             </div>
                             <div className="row justify-content-center mt-5">
 
                                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 text-center px-3">
-
+                                <div className="form-text">
                                     <select class="select" name="operator" onChange={handleChange}
                                             value={state.operator}>
                                         <option value="+">+</option>
@@ -61,24 +61,25 @@ const Screen = ({operand1}) => {
                                         <option value="*">*</option>
 
                                     </select>
-
-
+                                    <label for="youridhere" className="static-value">Operator</label>
+                                    <label for="youridhere" className="static-value1"><i class="fas fa-angle-down"></i></label>
+                                     </div>
                                 </div>
 
                                 <div className="col-6 col-sm-6 col-md-6 col-lg-4 px-3 px-sm-0 text-center">
 
-
+                                  <div className="form-text">
                                     <input type="number" id="operand2" name="operand2" value={state.operand2}
-                                           placeholder="Enter starting number" onChange={handleChange}/>
-
-
+                                           placeholder="" onChange={handleChange}/>
+                                           <label for="youridhere" className="static-value">Operand</label>
+                                           </div>
                                 </div>
 
 
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-4 text-center px-3">
 
 
-                                    <input type="submit" className="btn btn-success btn-block" onClick={handleSubmit} value="Add Number"/>
+                                    <input type="submit" className="btn btn-success btn-block" onClick={handleSubmit} value="Add Operation"/>
 
                                 </div>
 

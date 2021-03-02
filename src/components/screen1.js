@@ -25,9 +25,10 @@ const Screen1 = ({handleChange}) => {
                         <form>
                             <div className="row">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-6">
-                                    <div>
+                                    <div className="form-text">
                                         <input type="number" value={initialValue} id="initialValue"
-                                               placeholder="Enter starting number" onChange={handleInputChange}/>
+                                               placeholder="" onChange={handleInputChange}/>
+                                                     <label for="youridhere" className="static-value">Please enter a number</label>
                                     </div>
 
                                 </div>
