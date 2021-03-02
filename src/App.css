@@ -54,3 +54,7 @@ input[type=submit] {
     transform: rotate(360deg);
   }
 }
+
+.badge {
+  width: 50px;
+}
