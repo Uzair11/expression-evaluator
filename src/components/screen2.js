@@ -11,7 +11,9 @@ const Screen = ({input}) => {
     })
     const {operand2, operator, result, operand1} = state;
     const handleChange = (e) => {
-        setState({...state, [e.target.name]: e.target.value})
+        let {result} = state;
+        let previousResult = result;
+        setState({...state, [e.target.name]: e.target.value, operand1: previousResult})
     }
     const handleSubmit = (e) => {
         e.preventDefault();
